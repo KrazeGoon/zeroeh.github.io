@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+<center>
+<p>Click "Roll Dice" to begin.</p>
+
+<button onclick="rollDice()">Roll Dice</button>
+
+<p id="roll"></p>
+
+<script>
+function rollDice()
+{
+    var x = document.getElementById("roll")
+    x.innerHTML = Math.floor((Math.random() * 100) + 1);
+}
+</script>
+</center>
+</body>
+</html>
