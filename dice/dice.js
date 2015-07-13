@@ -233,7 +233,7 @@
         shading: THREE.FlatShading,
     };
     this.label_color = '#aaaaaa';
-    this.dice_color = '#202020';
+    this.dice_color = '#535353';    /*    was #202020   */
     this.known_types = ['d4', 'd6', 'd8', 'd10', 'd12', 'd20', 'd100'];
     this.dice_mass = { 'd4': 300, 'd6': 300, 'd8': 340, 'd10': 350, 'd12': 380, 'd20': 400, 'd100': 350 };
     this.dice_inertia = { 'd4': 5, 'd6': 13, 'd8': 10, 'd10': 9, 'd12': 8, 'd20': 6, 'd100': 9 };
@@ -367,7 +367,7 @@
         light.shadowCameraFar = mw * 3;
         light.shadowCameraFov = 50;
         light.shadowBias = 0.001;
-        light.shadowDarkness = 0.3;
+        light.shadowDarkness = 0.5; /* was 0.3 */
         light.shadowMapWidth = 1024;
         light.shadowMapHeight = 1024;
         this.scene.add(light);

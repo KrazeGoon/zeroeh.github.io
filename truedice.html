@@ -3,21 +3,21 @@
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="keywords" content="DnD, dangeon and dragons, roleplay, dice, roller, 3D, RPG, wargame"/>
-<meta name="description" content="Online 3D dice roller"/>
-<title>teal 3d dice roller</title>
+<meta name="keywords" content="dice, 3D"/>
+<meta name="description" content="Online 3D Dice Roller"/>
+<title>Smite's Dice</title>
 
-<style type="text/css">@import "../main.css";</style>
-<style type="text/css">@import "dice.css";</style>
+<style type="text/css">@import "main.css";</style>
+<style type="text/css">@import "dice/dice.css";</style>
 
 </head>
 
 <body class="svg" style="margin: 0">
     <div class="control_panel">
-        <h6><img src="../favicon.ico" style="vertical-align: middle"></img> <a href="..">teal</a> dice</h6>
+        <h6><img src="../favicon.ico" style="vertical-align: middle"></img> <a href="..">Smite's</a> Dice</h6>
         <p id="loading_text">Loading libraries, please wait a bit...</p>
         <p id="info_text"><a href="http://www.teall.info/2014/01/online-3d-dice-roller.html">More info and help</a></p>
-        <p id="info_text"><a href="/mdice">Multiplayer version</a></p>
+        <p id="info_text"><a href="/mdice">Multiplayer Version</a></p>
     </div>
     <div id="info_div" style="display: none">
         <div class="center_field">
@@ -44,11 +44,11 @@
     </div>
     <div id="canvas"></div>
 
-    <script src="../libs/three.min.js"></script>
-    <script src="../libs/cannon.min.js"></script>
-    <script type="text/javascript" src="../teal.js"></script>
-    <script type="text/javascript" src="dice.js"></script>
-    <script type="text/javascript" src="main.js"></script>
+    <script src="libs/three.min.js"></script>
+    <script src="libs/cannon.min.js"></script>
+    <script type="text/javascript" src="teal.js"></script>
+    <script type="text/javascript" src="dice/dice.js"></script>
+    <script type="text/javascript" src="dice/main.js"></script>
     <script type="text/javascript" defer="defer">
         dice_initialize(document.body, window.innerWidth - 1, window.innerHeight - 1);
     </script>
