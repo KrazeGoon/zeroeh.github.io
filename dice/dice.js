@@ -367,7 +367,7 @@
         light.shadowCameraFar = mw * 3;
         light.shadowCameraFov = 50;
         light.shadowBias = 0.001;
-        light.shadowDarkness = 0.5; /* was 0.3 */
+        light.shadowDarkness = 0.2; /* was 0.3 */
         light.shadowMapWidth = 1024;
         light.shadowMapHeight = 1024;
         this.scene.add(light);
