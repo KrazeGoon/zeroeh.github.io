@@ -226,14 +226,14 @@
     this.scale = 50;
     this.chamfer = 0.6;
     this.material_options = {
-        specular: '#171d1f',
+        specular: '#ff3399',
         color: '#ffffff',
         emissive: '#000000',
-        shininess: 40, /* 70 */
+        shininess: 20,
         shading: THREE.FlatShading,
     };
-    this.label_color = '#aaaaaa';
-    this.dice_color = '#202020';    /*    was #202020   */
+    this.label_color = '#cccccc';
+    this.dice_color = '#a30000';    /*    was #202020   */
     this.known_types = ['d4', 'd6', 'd8', 'd10', 'd12', 'd20', 'd100'];
     this.dice_mass = { 'd4': 300, 'd6': 300, 'd8': 340, 'd10': 350, 'd12': 380, 'd20': 400, 'd100': 350 };
     this.dice_inertia = { 'd4': 5, 'd6': 13, 'd8': 10, 'd10': 9, 'd12': 8, 'd20': 6, 'd100': 9 };
@@ -340,7 +340,7 @@
         this.renderer.setSize(this.cw * 2, this.ch * 2);
         this.renderer.shadowMapEnabled = true;
         this.renderer.shadowMapSoft = true;
-        this.renderer.setClearColor(0xffffff, 1);
+        this.renderer.setClearColor(0x000000, 1);
 
         this.dices = [];
         this.scene = new THREE.Scene();
@@ -356,7 +356,7 @@
         this.camera = new THREE.PerspectiveCamera(20, this.cw / this.ch, 1, wh * 1.3);
         this.camera.position.z = wh;
 
-        var ambientLight = new THREE.AmbientLight(0xf0f0f0);
+        var ambientLight = new THREE.AmbientLight(0xf0f0f0); /* 0xf0f0f0 */
         this.scene.add(ambientLight);
         var mw = Math.max(this.w, this.h);
         var light = new THREE.SpotLight(0xffffff);
@@ -367,7 +367,7 @@
         light.shadowCameraFar = mw * 3;
         light.shadowCameraFov = 50;
         light.shadowBias = 0.001;
-        light.shadowDarkness = 0.2; /* was 0.3 */
+        light.shadowDarkness = 0.3;
         light.shadowMapWidth = 1024;
         light.shadowMapHeight = 1024;
         this.scene.add(light);
@@ -383,7 +383,7 @@
                     this.dice_body_material, this.dice_body_material, 0, 0.5));
 
         this.desk = new THREE.Mesh(new THREE.PlaneGeometry(this.w * 2, this.h * 2, 1, 1), 
-                new THREE.MeshLambertMaterial({ color: 0xffffff }));
+                new THREE.MeshPhongMaterial({ color: 0x003900, ambient: 0x006600, emissive: 0 })); 
         this.desk.receiveShadow = true;
         this.scene.add(this.desk);
 
@@ -598,7 +598,7 @@
         this.clear();
         var step = this.w / 4.5;
         this.pane = new THREE.Mesh(new THREE.PlaneGeometry(this.cw * 20, this.ch * 20, 1, 1), 
-                new THREE.MeshPhongMaterial({ color: 0, ambient: 0xfbfbfb, emissive: 0 }));
+                new THREE.MeshPhongMaterial({ color: 0x003900, ambient: 0x006600, emissive: 0 }));
         this.pane.receiveShadow = true;
         this.pane.position.set(0, 0, 1);
         this.scene.add(this.pane);
@@ -673,7 +673,5 @@
             }
         });
     }
-
-
 }).apply(teal.dice = teal.dice || {});
 
