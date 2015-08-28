@@ -2,7 +2,7 @@
 <html>
 <body>
 <title><><> RealmBet <><></title>
-<style>
+<!--<style>
 body {
 background: url(bkg.jpg) no-repeat center center fixed; 
 -webkit-background-size: cover;
@@ -10,9 +10,9 @@ background: url(bkg.jpg) no-repeat center center fixed;
 -o-background-size: cover;
 background-size: cover;
 } 
-</style>
+</style>-->
 <center>
- <font color="white"><p>Click "Roll Dice" to begin</p>
+<p>Click "Roll Dice" to begin</p>
 <button onclick="rollDice()">Roll Dice</button>
 <p id="roll"></p>
 <script>
@@ -22,7 +22,6 @@ function rollDice()
     x.innerHTML = Math.floor((Math.random() * 100) + 1);
 }
 </script>
-</font>
 </center>
 </body>
 </html>
