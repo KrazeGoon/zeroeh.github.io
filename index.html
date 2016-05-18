@@ -31,9 +31,9 @@ body
     position:absolute;
 	width:46px;
 	height:46px;
-	animation:moveright 13s infinite;
-	-moz-animation:moveright 13s infinite;
-	-webkit-animation:moveright 13s infinite;
+	animation:movehome 13s infinite;
+	-moz-animation:movehome 13s infinite;
+	-webkit-animation:movehome 13s infinite;
 }
 .archershoot
 {
@@ -74,6 +74,25 @@ body
 	{
         left: 90%;
     }
+}
+@-moz-keyframes movehome
+{
+	0%
+	{
+		left: 0;
+	}
+	50%
+	{
+		left: 90%;
+		-moz-transform: scaleX(-1);
+		-webkit-transform: scaleX(-1);
+		transform: scaleX(-1);
+		
+	}
+	100%
+	{
+		left: 0;
+	}
 }
 </style>
 </head>
