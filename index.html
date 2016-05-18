@@ -20,7 +20,7 @@ body
 }
 .wizard
 {
-    position: absolute;
+    position:absolute;
 	width:46px;
 	height:46px;
 	animation:moveright 20s infinite;
@@ -29,12 +29,29 @@ body
 }
 .rogue
 {
-    position: absolute;
+    position:absolute;
 	width:46px;
 	height:46px;
-	animation:moveright 10s infinite;
-	-moz-animation:moveright 10s infinite;
-	-webkit-animation:moveright 10s infinite;
+	animation:moveright 13s infinite;
+	-moz-animation:moveright 13s infinite;
+	-webkit-animation:moveright 13s infinite;
+}
+.archershoot
+{
+    position:absolute;
+	width:46px;
+	height:46px;
+}
+.doomarrow
+{
+    position:absolute;
+	margin-left:50px;
+	width:28px;
+	height:28px;
+	-moz-transform:rotate(45deg);
+	animation:moveright .35s infinite;
+	-moz-animation:moveright .35s infinite;
+	-webkit-animation:moveright .35s infinite;
 }
 @-moz-keyframes moveright
 {
@@ -159,18 +176,19 @@ body
       }
 </script>
 </head>
-<body oncontextmenu="return false">
-<p>Changing a few things, stay tuned!</p>
-<img class="wizard" src="sprites/wizard.gif" />
+<body>
+<center><p>If you're here for the file downloads, click the wizard!</p></center>
+<a href="http://zeroeh.github.io/downloads.html"><img class="wizard" src="sprites/wizard.gif">
 <br>
 <br>
 <br>
+<a href="http://zeroeh.github.io/zeroehserver.html"><img class="rogue" src="sprites/rogue.gif">
 <br>
 <br>
 <br>
-<br>
-<br>
-<img class="rogue" src="sprites/rogue.gif" />
+<a href="http://zeroeh.github.io/credits.html"><img class="archershoot" src="sprites/archershoot.gif">
+<a href="http://zeroeh.github.io/exploits.html"><img class="doomarrow" src="sprites/doomarrow.png">
+<!--<img class="rogue" src="sprites/rogue.gif" />-->
 <!--<div class="left_box"></div>
 <div class="right_ball"></div>
 <div class="cube"></div>-->
