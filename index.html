@@ -1,6 +1,16 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<audio id="bg_music" autoplay="" loop="true" autobuffer="autobuffer" hidden="true">
+         <source type="audio/mpeg" src="files/sfx.mp3">
+</audio>
+<script>
+window.onload = function()
+{
+    var backgroundAudio=document.getElementById("bg_music");
+    backgroundAudio.volume=0.4;
+}
+</script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Zeroeh's Hub</title>
 <style>
