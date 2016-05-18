@@ -20,25 +20,45 @@ body
 }
 .wizard
 {
-	float:left;
-	width:128px;
-	height:128px;
-	-moz-animation:wizard 10s infinite;
-	-moz-animation-timing-function: ease-in-out;
+    position: absolute;
+	width:46px;
+	height:46px;
+	animation:moveright 20s infinite;
+	-moz-animation:moveright 20s infinite;
+	-webkit-animation:moveright 20s infinite;
 }
-@-moz-keyframes wizard
+.rogue
 {
-	0%
-	{
-		margin-left:0px;
-		
-	}
-
-	100%
-	{
-		margin-left:800px;
-	}
+    position: absolute;
+	width:46px;
+	height:46px;
+	animation:moveright 10s infinite;
+	-moz-animation:moveright 10s infinite;
+	-webkit-animation:moveright 10s infinite;
 }
+@-moz-keyframes moveright
+{
+	from
+	{
+        left: 0;
+    }
+    to 
+	{
+        left: 90%;
+    }
+}
+@-webkit-keyframes moveright
+{
+	from
+	{
+        left: 0;
+    }
+    to 
+	{
+        left: 90%;
+    }
+}
+
 .TYPEWRITER 
 {
   color: #00FF00;
@@ -48,37 +68,6 @@ body
 }
 
 </style>
-<script type="text/javascript">
-    // Anti-Leach script    
-
-    var message="";
-
-    function clickIE4(){
-    if (event.button==2){
-    alert(message);
-    return false;
-    }
-    }
-
-    function clickNS4(e){
-    if (document.layers||document.getElementById&&!document.all){
-    if (e.which==2||e.which==3){
-    alert(message);
-    return false;
-    }
-    }
-    }
-
-    if (document.layers){
-    document.captureEvents(Event.MOUSEDOWN);
-    document.onmousedown=clickNS4;
-    }
-    else if (document.all&&!document.getElementById){
-    document.onmousedown=clickIE4;
-    }
-
-    document.oncontextmenu=new Function("alert(message);return false")
-</script>
 <script type="text/javascript">
 
     // Typewriter Text
@@ -173,6 +162,15 @@ body
 <body oncontextmenu="return false">
 <p>Changing a few things, stay tuned!</p>
 <img class="wizard" src="sprites/wizard.gif" />
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<img class="rogue" src="sprites/rogue.gif" />
 <!--<div class="left_box"></div>
 <div class="right_ball"></div>
 <div class="cube"></div>-->
